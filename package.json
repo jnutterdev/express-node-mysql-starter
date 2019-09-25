@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "name": "nodejs-express-mysql",
     "version": "1.0.0",
     "description": "Node.js Restful CRUD API with Node.js, Express and MySQL",
@@ -26,4 +27,26 @@
     "devDependencies": {
         "nodemon": "^2.0.7"
     }
+=======
+  "name": "nodejs-express-mysql",
+  "version": "1.0.0",
+  "description": "Node.js Restful CRUD API with Node.js, Express and MySQL",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mysql",
+    "restapi"
+  ],
+  "author": "bezkoder",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1"
+  }
+>>>>>>> 8260dc6 (rebuild for deploying to Heroku & work with ClearDB)
 }
