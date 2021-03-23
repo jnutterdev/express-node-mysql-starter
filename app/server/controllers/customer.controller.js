@@ -1,5 +1,9 @@
 const Customer = require("../models/customer.model.js");
 
+exports.view = (req, res) => {
+    res.render('home', { title: "Welcome" });
+};
+
 // Create and Save a new Customer
 exports.create = (req, res) => {
   // Validate request
@@ -7,7 +11,7 @@ exports.create = (req, res) => {
     res.status(400).send({
       message: "Content can not be empty!"
     });
-  }
+  };
 
   // Create a Customer
   const customer = new Customer({
