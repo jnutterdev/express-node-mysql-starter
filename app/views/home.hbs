@@ -1,7 +1,6 @@
 <section class="container">
-    <div class="col">
+    <div class="title">
         <h1>Users</h1>
-        <button class="button is-primary"><a href="/adduser" type="button">Add user</a></button>
     </div>
     <table class="table is-striped">
         <thead>
@@ -9,6 +8,7 @@
                 <th>id</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th><button class="button is-primary is-small"><a href="/adduser" type="button">Add user</a></button></th>
             </tr>
         </thead>
         <tbody>
@@ -17,7 +17,7 @@
                 <td>{{this.id}}</td>
                 <td>{{this.name}}</td>
                 <td>{{this.email}}</td>
-                <td>
+                <td class="buttons are-small">
                     <button class="button is-primary"><a href="/viewuser/{{this.id}}" type="button">View</a></button>
                     <button class="button is-warning"><a href="/edituser/{{this.id}}" type="button">Edit</a></button>
                     <button class="button is-danger"><a href="/{{this.id}}" type="button">Delete</a></button>
