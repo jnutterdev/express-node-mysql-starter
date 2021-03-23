@@ -1,14 +1,23 @@
-{{> breadcrumb}}
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="/">Users</a></li>
+    <li class="is-active"><a href="#" aria-current="page">User info</a></li>
+  </ul>
+</nav>
+
+
 {{#each rows}}
 <table class="table is-striped">
     <thead>
         <tr>
             <th>Name</th>
             <th>Email</th>
+            <th>Id</th>
         </tr>
     </thead>
     <tbody>
         <tr>
+            <td>{{this.id}}</td>
             <td>{{this.name}}</td>
             <td>{{this.email}}</td>
         </tr>

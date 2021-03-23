@@ -30,7 +30,7 @@ Customer.findById = (customerId, result) => {
 
     if (res.length) {
       console.log("found customer: ", res[0]);
-      result(null, res[0]);
+      result(null, res);
       return;
     }
 

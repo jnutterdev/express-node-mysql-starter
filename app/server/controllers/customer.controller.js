@@ -1,8 +1,5 @@
 const Customer = require("../models/customer.model.js");
 
-exports.view = (req, res) => {
-    res.render('home', { title: "Welcome" });
-};
 
 // Create and Save a new Customer
 exports.create = (req, res) => {
@@ -46,7 +43,7 @@ exports.findAll = (req, res) => {
 
 // Find a single Customer with a customerId
 exports.findOne = (req, res) => {
-  Customer.findById(req.params.customerId, (err, data) => {
+  Customer.findById(req.params.customerId, (err, rows) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
@@ -57,7 +54,7 @@ exports.findOne = (req, res) => {
           message: "Error retrieving Customer with id " + req.params.customerId
         });
       }
-    } else res.send(data);
+    } else res.render('viewuser', {rows});
   });
 };
 
