@@ -1,0 +1,11 @@
+{{> breadcrumb}}
+
+
+{{#if alert}}
+<div class="alert">
+    <strong>{{alert}}</strong>
+</div>
+{{/if}}
+<form action="/adduser" method="POST" novalidate class="customers">
+{{> userform}}
+</form>

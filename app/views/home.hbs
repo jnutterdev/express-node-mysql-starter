@@ -1,0 +1,25 @@
+<section>
+    <div class="col">
+        <h1>Users</h1>
+        <button><a href="/adduser" type="button">Add user</a></button>
+    </div>
+    <table class="customers">
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        {{#each rows}}
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.email}}</td>
+            <td>
+                <a href="/viewuser/{{this.id}}" type="button">View</a>
+                <a href="/edituser/{{this.id}}" type="button">Edit</a>
+                <a href="/{{this.id}}" type="button">Delete</a>
+            </td>
+         </tr>
+         {{/each }}
+        </table>
+    </section>
