@@ -8,26 +8,24 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <div class="wrapper">
+    <div class="container">
     <header>
-        <nav>
-             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-    
-            </ul> 
-        </nav>
+        {{> navbar }} {{> searchbar }}
+        <section class="hero is-primary mt-5 mb-5">
+            <div class="hero-body">
+                <p class="title">
+                    User management
+                </p>
+                <p class="subtitle">
+                    Display a list of users
+                </p>
+            </div>
+        </section>
     </header>
     <main>
-        <form action="/" method="POST" novalidate> 
-            <input type="search" placeholder="Search" aria-label="Search" name="search" />
-            <button type="submit">Search</button>
-        </form>
         {{{body}}}
     </main>
-    <footer>
-        &copy; 2021 jnutterdev
-    </footer>
+        {{> footer }}
     </div>
 </body>
 </html>
