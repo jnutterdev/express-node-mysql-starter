@@ -40,7 +40,7 @@ Customer.findById = (customerId, result) => {
 };
 
 Customer.getAll = result => {
-  sql.query("SELECT * FROM customers", (err, res) => {
+  sql.query("SELECT * FROM customers WHERE active is TRUE", (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
