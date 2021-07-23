@@ -20,9 +20,10 @@ const { SSL_OP_MSIE_SSLV2_RSA_PADDING } = require("constants");
 app.use(lessMiddleware(__dirname + '/app/public/',{
   debug: true,
   dest: __dirname + '/app/public',
-  force: true
+  force: true,
+  compress: false
 }));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/app/public'));
 
 // Templating engine
 
