@@ -2,7 +2,7 @@
 
 A barebones project to bootstrap MySQL, Express.js, and Node.js. Features include:  
 
-- SASS for styling
+- LESS for styling
 - Basic user management system 
     - Located under    
 - Login/Signup page
