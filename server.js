@@ -1,7 +1,8 @@
 const express = require("express");
 const exphbs = require('express-handlebars');
 const app = express();
-const sassMiddleware = require('node-sass-middleware');
+// const sassMiddleware = require('node-sass-middleware');
+const lessMiddleware = require('less-middleware');
 require('dotenv').config();
 
 // Parse requests of content-type - application/json
@@ -12,15 +13,16 @@ app.use(express.urlencoded({ extended: true }));
 
 // Static files
 const path = require('path');
+const { SSL_OP_MSIE_SSLV2_RSA_PADDING } = require("constants");
 
-app.use(sassMiddleware({
-    src: __dirname + '/app/sass', 
-    dest: __dirname + '/app/public/stylesheets', 
-    debug: true, 
-    force: true,
-    outputStyle: 'compressed' 
-  }),
-  express.static(path.join(__dirname, 'public')))
+// import LESS middleware
+
+app.use(lessMiddleware(__dirname + '/app/public/',{
+  debug: true,
+  dest: __dirname + '/app/public',
+  force: true
+}));
+app.use(express.static(__dirname + '/public'));
 
 // Templating engine
 
